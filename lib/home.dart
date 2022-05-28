@@ -96,23 +96,45 @@ class _HomeState extends State<Home> {
                   Row(
                     children: [
                       Column(
-                        children: [Text("Imagem")],
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                //border: Border.all(color: Colors.black,width: 1),
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        "Assets/Imagens/capuccino.png"),
+                                    fit: BoxFit.cover),
+                                boxShadow: [
+                                  BoxShadow(
+                                      blurRadius: 4,
+                                      spreadRadius: 0.1,
+                                      offset: Offset(2, 4))
+                                ]),
+                            alignment: Alignment.center,
+                            width: 100,
+                            height: tamanhoFotosAltura,
+                          ),
+                        ],
                       ),
                       Column(
                         children: [
                           Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [Text("Titulo")],
                           ),
                           Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [Text("Descrição")],
                           )
                         ],
                       )
                     ],
                   ),
-                  Row(),
-                  Row(),
-                  Row(),
                 ],
               ),
             ),
