@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:starbucks/home.dart';
+import 'package:starbucks/telas/home.dart';
 import 'package:starbucks/telas/Principal.dart';
 
 void main() {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(), //Home(),
+      home: Home(),
     );
   }
 }
