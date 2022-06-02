@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:starbucks/telas/home.dart';
-import 'package:starbucks/telas/Principal.dart';
+import 'package:starbucks/widgets/carousel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,16 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent,));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Starbucksss',
+      title: 'Starbucks',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: Home(),//Carousel(),//Home(),
     );
   }
 }
+

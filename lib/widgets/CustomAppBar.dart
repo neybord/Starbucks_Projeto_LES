@@ -13,7 +13,8 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top,
+        top: 45,
+        //top: MediaQuery.of(context).padding.top,
         left: 25,
         right: 25,
       ),
