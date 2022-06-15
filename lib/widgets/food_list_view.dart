@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:starbucks/widgets/restaurant.dart';
-
+import 'detail.dart';
 import 'food_item.dart';
 
 class FoodListView extends StatelessWidget {
@@ -20,29 +21,22 @@ class FoodListView extends StatelessWidget {
       child: PageView(
         controller: pageController,
         onPageChanged: (index) => callback(index),
-        children: category
-            .map(
-              (e) => Container(
-                child: SizedBox.expand(
-                  child: DraggableScrollableSheet(
-                    builder: (BuildContext context,
-                        ScrollController scrollController) {
-                      return Container(
-                        color: Colors.blue[100],
-                        child: ListView.builder(
-                          controller: scrollController,
-                          itemCount: 25,
-                          itemBuilder: (BuildContext context, int index) {
-                            return ListTile(title: Text('Item $index'));
-                          },
-                        ),
-                      );
+        children:
+          category.map((e) =>
+              ListView.separated(
+                //scrollDirection: Axis.vertical,
+                padding: EdgeInsets.zero,
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(restaurant.menu[category[selected]]![index])));
                     },
+                    child: FoodItem(
+                        restaurant.menu[category[selected]]![index]
+          ),
                   ),
-                ),
-              ),
-            )
-            .toList(),
+              separatorBuilder: (_, index) => SizedBox(height: 15),
+              itemCount: restaurant.menu[category[selected]]!.length)).toList()
       ),
     );
   }

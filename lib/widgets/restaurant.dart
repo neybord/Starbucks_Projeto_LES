@@ -9,7 +9,7 @@ class Restaurant {
     return Restaurant(
       {
         'Recommend': Food.generateRecommendFoods(),
-        'Popular': Food.generateRecommendFoods(),
+        'Popular': Food.generatePopularFoods(), //Passar aqui a geração de cada Categoria
         'Coffes': Food.generateRecommendFoods(),
         'Coffes': Food.generateRecommendFoods(),
         'Coffes': Food.generateRecommendFoods(),

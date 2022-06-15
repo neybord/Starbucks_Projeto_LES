@@ -4,7 +4,7 @@ import 'package:starbucks/widgets/food_list.dart';
 import 'package:starbucks/widgets/imagemCategoria.dart';
 import 'package:starbucks/widgets/restaurant.dart';
 import 'package:starbucks/widgets/widget-input.dart';
-
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../widgets/CustomAppBar.dart';
 import '../widgets/food_list_view.dart';
 
@@ -28,12 +28,12 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppBar(
-            Icons.arrow_back_ios_outlined, // Irei Adicionar o Carousel Aqui
+            Icons.menu_rounded,
             Icons.search_outlined,
           ),
-          pesquisaCorpo(),
+          //pesquisaCorpo(),
           Carousel(),
-          FoodList(selected, (index) {
+          FoodList(selected, (int index) {
             setState(() {
               selected = index;
             });
@@ -50,13 +50,49 @@ class _HomeState extends State<Home> {
               pageController,
               restaurant,
             ),
-          )
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 25),
+            height: 35,
+            child: SmoothPageIndicator(
+              controller: pageController,
+              count: restaurant.menu.length,
+              effect: CustomizableEffect(
+                dotDecoration: DotDecoration(
+                  width: 8,
+                  height: 8,
+                  color: Colors.black.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                activeDotDecoration: DotDecoration(
+                  width: 10,
+                  height: 10,
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  dotBorder: DotBorder(
+                    color: Colors.green,
+                    padding: 2,
+                    width: 2,
+                  ),
+                ),
+              ),
+              onDotClicked: (index) => pageController.jumpToPage(index),
+            ),
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()  {},
+        backgroundColor: Colors.white,
+        elevation: 2,
+        child: Icon(Icons.shopping_cart_outlined,
+        color: Colors.black,
+        size: 30),
       ),
     );
   }
 
-  pesquisaCorpo() {
+  /*pesquisaCorpo() {
     TextEditingController pesquisa = TextEditingController();
     return Container(
       margin: EdgeInsets.only(left: 50),
@@ -64,5 +100,5 @@ class _HomeState extends State<Home> {
       child: InputTexto("Pesquisar", "Digite nome da bebida",
           controller: pesquisa),
     );
-  }
+  }*/
 }

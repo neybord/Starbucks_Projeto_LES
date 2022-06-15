@@ -18,8 +18,8 @@ class FoodList extends StatelessWidget {
       children: [
         Flexible(
           child: Container(
-            height: 150,
-            padding: EdgeInsets.symmetric(vertical: 30),
+            height: 140,
+            padding: EdgeInsets.symmetric(vertical: 20),
             margin: EdgeInsets.symmetric(vertical: 20.0),
             child: ListView.separated(
                 shrinkWrap: true,
@@ -32,10 +32,10 @@ class FoodList extends StatelessWidget {
                             EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          /*borderRadius: BorderRadius.circular(50),
+                          //borderRadius: BorderRadius.circular(50),
                         color: selected == index
                             ? Color.fromRGBO(0, 128, 0, 1)
-                            : Color.fromRGBO(34, 57, 29, 1),*/
+                            : Color.fromRGBO(34, 57, 29, 1),
                           image: DecorationImage(
                               image: NetworkImage(imgCategoria[index]),
                               fit: BoxFit.cover),

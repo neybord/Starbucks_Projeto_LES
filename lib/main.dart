@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:starbucks/telas/home.dart';
 import 'package:starbucks/widgets/carousel.dart';
+import 'package:starbucks/widgets/food_img.dart';
 
 void main() {
   runApp(const MyApp());
