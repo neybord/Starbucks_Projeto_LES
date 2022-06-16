@@ -10,11 +10,11 @@ class Restaurant {
       {
         'Recommend': Food.generateRecommendFoods(),
         'Popular': Food.generatePopularFoods(), //Passar aqui a geração de cada Categoria
-        'Coffes': Food.generateRecommendFoods(),
-        'Coffes': Food.generateRecommendFoods(),
-        'Coffes': Food.generateRecommendFoods(),
-        'Teste1': Food.generateRecommendFoods(),
-        'Teste2': Food.generateRecommendFoods(),
+        'Hot Coffes': Food.generateRecommendFoods(),
+        'Cold Coffes': Food.generateRecommendFoods(),
+        'Iced Teas': Food.generateRecommendFoods(),
+        'Cold Drinks': Food.generateRecommendFoods(),
+        'Snacks': Food.generateRecommendFoods(),
       },
     );
   }

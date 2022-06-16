@@ -2,16 +2,24 @@ class Food {
   String imgUrl;
   String desc; //descricao
   String name; // nome
-  num qtde;
+  int qtde=0; // quantidade estava num
   String score; //Pontos/ Rankeamento
   String cal; // calorias
   num price; // preço
-  List <Map<String, String>> ingredients;
+  List <Map<String, String>> ingredients; // Ingredientes
   String about; //sobre
   bool hightLight; //
 
   Food(this.imgUrl, this.desc, this.name, this.qtde, this.score, this.cal, this.price,
       this.ingredients, this.about, {this.hightLight = false});
+
+  void setQuantity( bool isIncrement){
+    if(isIncrement){
+      qtde = qtde+1;
+    }else{
+      qtde = qtde-1;
+    }
+  }
 
   static List<Food> generateRecommendFoods() {
     return[

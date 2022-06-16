@@ -4,8 +4,9 @@ import 'food.dart';
 
 class FoodQuantity extends StatelessWidget {
   final Food food;
-
   FoodQuantity(this.food);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,7 @@ class FoodQuantity extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+
                     ),
                   ),
                 ],
