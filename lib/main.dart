@@ -9,11 +9,13 @@ import 'package:starbucks/widgets/food_img.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+      /*
       options: FirebaseOptions(
           apiKey: "AIzaSyBKhO31I9SOOAea-I9p6VMTDiVsbPdDxn0",
           appId: "starbucks-projeto-les",
           messagingSenderId: "1083630152509",
-          projectId: "emailpasswordauth-2d499"));
+          projectId: "emailpasswordauth-2d499")*/
+      );
 
   runApp(const MyApp());
 }
