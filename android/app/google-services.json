@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "826594501801",
+    "project_id": "emailpasswordauth-2d499",
+    "storage_bucket": "emailpasswordauth-2d499.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826594501801:android:80952cf4b7bbc7aa5275b8",
+        "android_client_info": {
+          "package_name": "com.example.projeto_starbucks_les"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826594501801-25l96bifljpqlo8ouu5g9k7j7o0ip0md.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKhO31I9SOOAea-I9p6VMTDiVsbPdDxn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826594501801-25l96bifljpqlo8ouu5g9k7j7o0ip0md.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

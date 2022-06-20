@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:starbucks/telas/login.dart';
 import 'package:starbucks/widgets/carousel.dart';
 import 'package:starbucks/widgets/food_list.dart';
 import 'package:starbucks/widgets/imagemCategoria.dart';
 import 'package:starbucks/widgets/restaurant.dart';
+import 'package:starbucks/widgets/user.dart';
 import 'package:starbucks/widgets/widget-input.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../widgets/CustomAppBar.dart';
@@ -16,6 +20,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+    .collection("user")
+    .doc(user!.uid)
+    .get()
+    .then((value){
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {
+
+      });
+    });
+  }
+
   var selected = 0; //Valor do Index ao selecionar uma categoria
   final pageController = PageController();
   final restaurant = Restaurant.generateRestaurant();
@@ -28,8 +51,9 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppBar(
-            Icons.menu_rounded,
+            Icons.logout_outlined,
             Icons.search_outlined,
+            leftCallBack:  () => logout(context),
           ),
           //pesquisaCorpo(),
           Carousel(),
@@ -91,6 +115,14 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  Future<void> logout(BuildContext context) async
+  {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => Login()));
+  }
+
 
   /*pesquisaCorpo() {
     TextEditingController pesquisa = TextEditingController();

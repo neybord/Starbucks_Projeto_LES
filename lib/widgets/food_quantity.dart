@@ -5,6 +5,8 @@ import 'food.dart';
 class FoodQuantity extends StatelessWidget {
   final Food food;
   FoodQuantity(this.food);
+  int qua=0;
+
 
 
 
@@ -59,12 +61,13 @@ class FoodQuantity extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    '-',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                      '-',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
+
                   Container(
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -78,6 +81,7 @@ class FoodQuantity extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   Text(
                     '+',
                     style: TextStyle(

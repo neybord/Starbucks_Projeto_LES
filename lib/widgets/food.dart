@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Food {
   String imgUrl;
   String desc; //descricao
@@ -13,13 +15,14 @@ class Food {
   Food(this.imgUrl, this.desc, this.name, this.qtde, this.score, this.cal, this.price,
       this.ingredients, this.about, {this.hightLight = false});
 
-  void setQuantity( bool isIncrement){
+  /*oid setQuantity( bool isIncrement){
     if(isIncrement){
       qtde = qtde+1;
     }else{
       qtde = qtde-1;
     }
-  }
+  }*/
+
 
   static List<Food> generateRecommendFoods() {
     return[
